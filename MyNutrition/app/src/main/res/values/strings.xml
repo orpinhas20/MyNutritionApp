@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyNutrition</string>
+    <string name="title_daily_status">Daily Status</string>
+    <string name="title_diet_dictionary">Diet Dictionary</string>
+    <string name="title_food_tracking">Food Tracking</string>
+    <string name="title_contact">Contact</string>
+    <string name="settings">settings</string>
+</resources>
