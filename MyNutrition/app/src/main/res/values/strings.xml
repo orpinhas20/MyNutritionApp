@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">MyNutrition</string>
-    <string name="title_daily_status">Daily Status</string>
-    <string name="title_diet_dictionary">Diet Dictionary</string>
-    <string name="title_food_tracking">Food Tracking</string>
-    <string name="title_contact">Contact</string>
+    <string name="title_daily_status" translatable="false">Daily Status</string>
+    <string name="title_diet_dictionary" translatable="false">Diet Dictionary</string>
+    <string name="title_food_tracking" translatable="false">Food Tracking</string>
+    <string name="title_contact" translatable="false">Contact</string>
     <string name="settings">settings</string>
+    <string name="next">Next</string>
+    <string name="cancle">Cancle</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="verification_code">Verificarion Code</string>
+    <string name="ok">OK</string>
+
+    <string name="sign_in_cancelled">Sign In Cancelled</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="unknown_error">unknown error</string>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyNutrition</string>
+    <string name="settings">הגדרות</string>
+    <string name="next">הבא</string>
+    <string name="cancle">ביטול</string>
+    <string name="phone_number">מספר פלאפון</string>
+    <string name="verification_code">קוד אימות</string>
+    <string name="ok">אישור</string>
+
+    <string name="sign_in_cancelled">התחברות נכשלה</string>
+    <string name="no_internet_connection">אין חיבור אינטרנט</string>
+    <string name="unknown_error">תקלה לא ידועה</string>
+</resources>
