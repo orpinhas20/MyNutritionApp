@@ -55,11 +55,10 @@ public class MainActivity extends AppCompatActivity {
         dailyStatusFragment = new DailyStatusFragment();
         foodTrackingFragment = new FoodTrackingFragment();
         contactFragment = new ContactFragment();
-        activeFragment = dietDictionaryFragment;
         updateTitle(R.id.navigation_daily_status);
-
+        activeFragment = dailyStatusFragment;
         fragmentManager.beginTransaction().add(R.id.nav_host_fragment, dailyStatusFragment, "1").commit();
-        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, dietDictionaryFragment, "2").hide(dailyStatusFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, dietDictionaryFragment, "2").hide(dietDictionaryFragment).commit();
         fragmentManager.beginTransaction().add(R.id.nav_host_fragment, foodTrackingFragment, "3").hide(foodTrackingFragment).commit();
         fragmentManager.beginTransaction().add(R.id.nav_host_fragment, contactFragment, "4").hide(contactFragment).commit();
 

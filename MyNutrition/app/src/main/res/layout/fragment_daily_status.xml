@@ -7,54 +7,16 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".ui.daily_status.DailyStatusFragment">
 
-<EditText
-    android:id="@+id/food_name"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/drop_list"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    android:hint="enter food here"
-    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-    android:layout_margin="30dp"
-    android:padding="30dp"
-    android:textSize="20dp"
-    />
-
-    <Spinner
-        android:id="@+id/drop_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@id/pie_chart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/food_name" />
-
-    <Button
-        android:id="@+id/BTN_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/drop_list"
-        app:layout_constraintVertical_bias="0.061" />
 
     <com.anychart.AnyChartView
         android:id="@+id/pie_chart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/BTN_next"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
+        android:layout_marginBottom="120dp"
+        android:layout_marginTop="60dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
