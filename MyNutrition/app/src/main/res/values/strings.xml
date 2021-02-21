@@ -14,4 +14,14 @@
     <string name="sign_in_cancelled">Sign In Cancelled</string>
     <string name="no_internet_connection">No internet connection</string>
     <string name="unknown_error">unknown error</string>
+
+    <string name="candy"> candy</string>
+    <string name="sweet_drinks"> sweet drinks</string>
+    <string name="snacks"> snacks</string>
+    <string name="fat"> fat</string>
+    <string name="protain"> protain</string>
+    <string name="carbs"> carbs </string>
+    <string name="fruits"> fruits</string>
+    <string name="vegetable"> vegetables </string>
+
 </resources>

@@ -58,10 +58,14 @@ public class MainActivity extends AppCompatActivity {
         activeFragment = dietDictionaryFragment;
         updateTitle(R.id.navigation_daily_status);
 
-        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, contactFragment, "4").hide(contactFragment).commit();
-        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, foodTrackingFragment, "3").hide(foodTrackingFragment).commit();
-        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, dietDictionaryFragment, "2").hide(dailyStatusFragment).commit();
         fragmentManager.beginTransaction().add(R.id.nav_host_fragment, dailyStatusFragment, "1").commit();
+        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, dietDictionaryFragment, "2").hide(dailyStatusFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, foodTrackingFragment, "3").hide(foodTrackingFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.nav_host_fragment, contactFragment, "4").hide(contactFragment).commit();
+
+
+
+
 
         navView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -11,4 +11,12 @@
     <string name="sign_in_cancelled">התחברות נכשלה</string>
     <string name="no_internet_connection">אין חיבור אינטרנט</string>
     <string name="unknown_error">תקלה לא ידועה</string>
+    <string name="snacks">חטיפים</string>
+    <string name="sweet_drinks">שתייה ממותקת</string>
+    <string name="candy">ממתקים</string>
+    <string name="fat">שומן</string>
+    <string name="protain">חלבונים</string>
+    <string name="carbs">פחמימות</string>
+    <string name="fruits">פירות</string>
+    <string name="vegetable">ירקות</string>
 </resources>
