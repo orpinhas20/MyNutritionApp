@@ -49,4 +49,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.firebaseui:firebase-ui-auth:7.1.1'
+    //pie chart
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
 }
