@@ -59,20 +59,33 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback, Loc
                              ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_contact, null, false);
-        //textView = v.findViewById(R.id.text_contact);
-        //textView.setText("Contact Fragment");
         mapView = (MapView) v.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         this.mapView.onResume();
         mapView.getMapAsync(this);
-
         return v;
+    }
+
+    private void setClinqMarker() {
+        LatLng latLng = new LatLng(32.0615967777968, 34.79127534908457) ;
+        // Creating a marker
+        MarkerOptions markerOptions = new MarkerOptions();
+
+        // Setting the position for the marker
+        markerOptions.position(latLng);
+
+        markerOptions.title(latLng.latitude + " : " + latLng.longitude);
+
+        googleMap.addMarker(markerOptions);
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
         this.updateMap(this.position);
+        setClinqMarker();
+
     }
 
     @Override
@@ -114,7 +127,6 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback, Loc
             if (this.currentMarker != null) {
                 this.currentMarker.remove();
             }
-
             // Add new marker to the map:
             this.currentMarker = this.googleMap
                     .addMarker(new MarkerOptions()

@@ -1,5 +1,6 @@
 package com.example.mynutrition.ui.food_tracking;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,8 +14,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.mynutrition.App;
+import com.example.mynutrition.Constant;
 import com.example.mynutrition.R;
 import com.example.mynutrition.data.Food;
 
@@ -24,6 +27,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -77,10 +81,15 @@ public class FoodTrackingFragment extends Fragment {
         return root;
     }
 
+    private void sendMessage() {
+        Intent intent = new Intent(Constant.ACTION_UPDATE_UI);
+        LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
+    }
+
     public void saveFood() {
         userFoodName = food_name.getText().toString();
         userFoodType = drop_list.getSelectedItem().toString();
-        Food food = new Food(userFoodName, userFoodType);
+        Food food = new Food(userFoodName, userFoodType, Calendar.getInstance().getTimeInMillis());
         if (userFoodType.isEmpty() || userFoodName.isEmpty()) {
             Toast.makeText(this.getContext(), "PLEASE COMPLETE ALL FIELDS", Toast.LENGTH_SHORT).show();
             return;
@@ -89,8 +98,10 @@ public class FoodTrackingFragment extends Fragment {
         db.collection(user.getPhoneNumber()).add(food).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
-                if (task.isSuccessful())
-                    Log.d("pttt", "success");
+                if (task.isSuccessful()){
+                    Toast.makeText(getContext(), "Food added successfully", Toast.LENGTH_SHORT).show();
+                    sendMessage();
+                }
                 else {
                     Log.d("pttt", "error complete task");
                 }

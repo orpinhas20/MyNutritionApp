@@ -34,7 +34,6 @@ import java.util.concurrent.TimeUnit;
 public class Login extends AppCompatActivity {
 
     private final int RC_SIGN_IN = 1234;
-    private String phone;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser user;
 
@@ -82,8 +81,11 @@ public class Login extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
+
             // Successfully signed in
             if (resultCode == RESULT_OK) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                this.user = user;
                 goToNextActivity();
             } else {
                 // Sign in failed

@@ -17,7 +17,7 @@
             android:value="@string/map_key"/>
         <activity
             android:name=".Login"
-            android:theme="@style/Theme.MyNutrition.NoActionBar"
+            android:theme="@style/Theme.MyNutrition"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity" >
+            android:name=".MainActivity"
+            android:theme="@style/Theme.MyNutrition">
         </activity>
     </application>
 </manifest>
