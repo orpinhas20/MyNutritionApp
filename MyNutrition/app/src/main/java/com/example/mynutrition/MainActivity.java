@@ -1,28 +1,23 @@
 package com.example.mynutrition;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.example.mynutrition.data.User;
 import com.example.mynutrition.ui.daily_status.DailyStatusFragment;
 import com.example.mynutrition.ui.diet_dictionary.DietDictionaryFragment;
 import com.example.mynutrition.ui.food_tracking.FoodTrackingFragment;
 import com.example.mynutrition.ui.contact.ContactFragment;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import android.Manifest;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -36,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private BottomNavigationView navView;
     private Toolbar toolbar;
+    private FirebaseUser user;
+    private Intent intent;
 
 
     @Override
@@ -45,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         initBottomBar();
+        user = App.getInstance().getFbUser();
+        Log.d("pttt","phone number = " + user.getPhoneNumber());
 
     }
 

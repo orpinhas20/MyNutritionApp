@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mynutrition.ui.food_tracking.FoodTrackingFragment;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
@@ -33,6 +34,9 @@ import java.util.concurrent.TimeUnit;
 public class Login extends AppCompatActivity {
 
     private final int RC_SIGN_IN = 1234;
+    private String phone;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser user;
 
     public Login() {
     }
@@ -41,8 +45,8 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = firebaseAuth.getCurrentUser();
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
         if (user != null) {
             goToNextActivity();
         } else {
@@ -51,26 +55,23 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginMethod() {
-        Log.d("pttt","loginMethod");
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(Arrays.asList(
                                 new AuthUI.IdpConfig.PhoneBuilder().build()
                         ))
-                        //.setLogo(R.drawable.ic_logo_s)
                         .setTosAndPrivacyPolicyUrls(
                                 "https://example.com/terms.html",
                                 "https://example.com/privacy.html")
                         .setTheme(R.style.Theme_AppCompat)
                         .build(),
                 RC_SIGN_IN);
-
     }
 
     private void goToNextActivity() {
-        Log.d("pttt","goToNextActivity");
         Intent next = new Intent(Login.this,MainActivity.class);
+        App.getInstance().setFbUser(user);
         startActivity(next);
         finish();
     }
