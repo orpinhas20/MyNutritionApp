@@ -7,5 +7,7 @@ public class Constant {
     public static final String CARBS_iD = "1";
     public static final String FRUITS_ID = "2";
     public static final String vegetable = "3";
+    public static final String ACTION_UPDATE_UI = "update_ui";
+
 
 }

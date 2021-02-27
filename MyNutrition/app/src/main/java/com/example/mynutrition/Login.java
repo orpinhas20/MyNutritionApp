@@ -82,8 +82,11 @@ public class Login extends AppCompatActivity {
         if (requestCode == RC_SIGN_IN) {
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
+
             // Successfully signed in
             if (resultCode == RESULT_OK) {
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                this.user = user;
                 goToNextActivity();
             } else {
                 // Sign in failed

@@ -1,16 +1,19 @@
-package com.example.mynutrition;
+package com.example.mynutrition.data;
 
 public class Food {
 
     private String foodName;
     private String foodType;
+    private long timeStamp;
+
 
     public Food() {
     }
 
-    public Food(String foodName, String foodType) {
+    public Food(String foodName, String foodType, long timeStamp) {
         this.foodName = foodName;
         this.foodType = foodType;
+        this.timeStamp = timeStamp;
     }
 
     public String getFoodName() {
@@ -27,5 +30,13 @@ public class Food {
 
     public void setFoodType(String foodType) {
         this.foodType = foodType;
+    }
+
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(long timeStamp) {
+        this.timeStamp = timeStamp;
     }
 }

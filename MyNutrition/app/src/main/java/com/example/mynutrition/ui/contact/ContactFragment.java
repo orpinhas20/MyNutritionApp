@@ -69,10 +69,26 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback, Loc
         return v;
     }
 
+    private void setClinqMarker() {
+        LatLng latLng = new LatLng(32.0615967777968, 34.79127534908457) ;
+        // Creating a marker
+        MarkerOptions markerOptions = new MarkerOptions();
+
+        // Setting the position for the marker
+        markerOptions.position(latLng);
+
+        markerOptions.title(latLng.latitude + " : " + latLng.longitude);
+
+        googleMap.addMarker(markerOptions);
+
+    }
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
         this.updateMap(this.position);
+        setClinqMarker();
+
     }
 
     @Override

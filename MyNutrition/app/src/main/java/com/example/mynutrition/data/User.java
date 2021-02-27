@@ -1,4 +1,4 @@
-package com.example.mynutrition;
+package com.example.mynutrition.data;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
