@@ -113,8 +113,6 @@ public class DailyStatusFragment extends Fragment {
         int sweet_drinksCounter = 0;
         int candyCounter = 0;
 
-        Log.d("pttt", "data size " + foodList.size());
-
         for (int i = 0; i < foodList.size(); i++) {
             if (DateUtils.isToday(foodList.get(i).getTimeStamp())) {
                 switch (foodList.get(i).getFoodType()) {
@@ -154,14 +152,6 @@ public class DailyStatusFragment extends Fragment {
 
             }
         }
-            Log.d("amount", "fruits = " + fruitsCounter);
-            Log.d("amount", "vegetables = " + vegetableCounter);
-            Log.d("amount", "carbs = " + carbsCounter);
-            Log.d("amount", "protain = " + protainCounter);
-            Log.d("amount", "fat = " + fatCounter);
-            Log.d("amount", "sweet drinks = " + sweet_drinksCounter);
-            Log.d("amount", "candy = " + candyCounter);
-            Log.d("amount", "snacks = " + snacksCounter);
 
             data.add(new ValueDataEntry("fruits", fruitsCounter));
             data.add(new ValueDataEntry("vegetables", vegetableCounter));
@@ -173,11 +163,9 @@ public class DailyStatusFragment extends Fragment {
             data.add(new ValueDataEntry("snacks", snacksCounter));
 
             pie = AnyChart.pie();
-            pie.title("Today Food Diagram: ");
+            pie.title("Today Food plate: ");
             pie.data(data);
             pieChart.setChart(pie);
-
-
         }
 
 

@@ -82,7 +82,6 @@ public class FoodTrackingFragment extends Fragment {
     }
 
     private void sendMessage() {
-        Log.d("sender", "Broadcasting message");
         Intent intent = new Intent(Constant.ACTION_UPDATE_UI);
         LocalBroadcastManager.getInstance(getContext()).sendBroadcast(intent);
     }
@@ -100,7 +99,6 @@ public class FoodTrackingFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if (task.isSuccessful()){
-                    Log.d("pttt", "success");
                     Toast.makeText(getContext(), "Food added successfully", Toast.LENGTH_SHORT).show();
                     sendMessage();
                 }

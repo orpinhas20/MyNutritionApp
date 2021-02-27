@@ -34,7 +34,6 @@ import java.util.concurrent.TimeUnit;
 public class Login extends AppCompatActivity {
 
     private final int RC_SIGN_IN = 1234;
-    private String phone;
     private FirebaseAuth firebaseAuth;
     private FirebaseUser user;
 

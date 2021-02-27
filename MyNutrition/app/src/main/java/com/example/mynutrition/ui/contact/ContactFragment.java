@@ -59,13 +59,10 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback, Loc
                              ViewGroup container, Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_contact, null, false);
-        //textView = v.findViewById(R.id.text_contact);
-        //textView.setText("Contact Fragment");
         mapView = (MapView) v.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         this.mapView.onResume();
         mapView.getMapAsync(this);
-
         return v;
     }
 
@@ -130,7 +127,6 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback, Loc
             if (this.currentMarker != null) {
                 this.currentMarker.remove();
             }
-
             // Add new marker to the map:
             this.currentMarker = this.googleMap
                     .addMarker(new MarkerOptions()

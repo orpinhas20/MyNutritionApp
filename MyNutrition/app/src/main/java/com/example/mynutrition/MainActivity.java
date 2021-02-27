@@ -1,7 +1,6 @@
 package com.example.mynutrition;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.example.mynutrition.ui.daily_status.DailyStatusFragment;
@@ -9,7 +8,6 @@ import com.example.mynutrition.ui.food_tracking.FoodTrackingFragment;
 import com.example.mynutrition.ui.contact.ContactFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseUser;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -91,6 +89,4 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
-
 }
